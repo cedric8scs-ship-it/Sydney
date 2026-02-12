@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australie en Famille – Sydney & Blue Mountains</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#f5f7fb;
+    color:#1b1f2a;
+}
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1506973035872-a4ec16b8d5f8?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:48px;
+    margin:0;
+    font-weight:800;
+}
+
+.hero p{
+    font-size:20px;
+    margin-top:15px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:#ff7a18;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+section{
+    padding:70px 10%;
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:40px;
+    text-align:center;
+    font-weight:700;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-top:0;
+    font-size:20px;
+}
+
+.card-content p{
+    font-size:14px;
+    color:#555;
+}
+
+.badge{
+    display:inline-block;
+    background:#e9f2ff;
+    color:#1c4ed8;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <div>
+        <h1>Australie en Famille</h1>
+        <p>24 février → 7 mars | Sydney & Blue Mountains</p>
+        <a href="#programme" class="btn">Voir le Programme</a>
+    </div>
+</div>
+
+<section id="programme">
+    <div class="section-title">Sydney – Animaux & Harbour</div>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">25 février</div>
+                <h3>Taronga Zoo</h3>
+                <p>Koalas, kangourous et vue spectaculaire sur Sydney Harbour. Accès possible en ferry depuis Circular Quay.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">26 février</div>
+                <h3>Manly Beach</h3>
+                <p>Plage familiale accessible en ferry. Promenade, baignade et ambiance australienne typique.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8d5f8?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">27 février</div>
+                <h3>The Rocks & Botanic Garden</h3>
+                <p>Flânerie dans le centre historique, vues iconiques sur l’Opéra et le Harbour Bridge.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section style="background:#eef3ff">
+    <div class="section-title">Blue Mountains – Nature & Panorama</div>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">1 mars</div>
+                <h3>Three Sisters</h3>
+                <p>Panorama emblématique des Blue Mountains à Echo Point. Balades faciles adaptées aux enfants.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581349487334-d4b4f7b8d1b5?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">2 mars</div>
+                <h3>Featherdale Wildlife Park</h3>
+                <p>Interaction rapprochée avec kangourous et koalas. Expérience plus intime qu’un grand zoo.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="section-title">Bondi – Plage & Fun</div>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">5 mars</div>
+                <h3>Bondi Beach & Coastal Walk</h3>
+                <p>Promenade spectaculaire le long des falaises jusqu’à Bronte ou Coogee.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6df?auto=format&fit=crop&w=1200&q=80">
+            <div class="card-content">
+                <div class="badge">6 mars</div>
+                <h3>Parc Aquatique Aquatopia</h3>
+                <p>Toboggans et piscines pour une journée ludique avant le départ le 7 au matin.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="footer">
+Voyage familial personnalisé – Sydney & NSW | Départ le 7 mars au matin
+</div>
+
+</body>
+</html>
