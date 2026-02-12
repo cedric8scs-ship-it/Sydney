@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Australie en famille — Sydney & Blue Mountains (24 fév → 7 mars)</title>
+  <meta name="description" content="Itinéraire familial jour par jour — koalas, kangourous, plages, ville et Blue Mountains." />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111a2e; --muted:#9fb0d0; --text:#e8eefc;
+      --accent:#58a6ff; --accent2:#7ee787; --warn:#ffcc66; --line:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(88,166,255,.20), transparent 55%),
+                  radial-gradient(1200px 900px at 80% 10%, rgba(126,231,135,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      padding:32px 18px 18px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(to bottom, rgba(17,26,46,.75), rgba(17,26,46,.15));
+    }
+    .wrap{max-width:980px; margin:0 auto}
+    .topgrid{
+      display:grid; gap:14px;
+      grid-template-columns: 1.2fr .8fr;
+      align-items:start;
+    }
+    @media (max-width: 860px){
+      .topgrid{grid-template-columns: 1fr;}
+    }
+    h1{margin:0 0 10px; font-size: clamp(22px, 3vw, 34px);}
+    .sub{color:var(--muted); margin:0 0 14px}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0}
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .card{
+      background: rgba(17,26,46,.72);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+    }
+    .card h3{margin:0 0 8px; font-size:15px; color:#cfe1ff}
+    .kv{display:grid; gap:10px; margin-top:10px}
+    .kv div{padding:10px; border-radius:12px; background: rgba(255,255,255,.03); border:1px solid var(--line)}
+    .kv b{display:block; font-size:12px; color:var(--muted); margin-bottom:4px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    button{
+      background: rgba(88,166,255,.18);
+      border:1px solid rgba(88,166,255,.35);
+      color: var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    button:hover{background: rgba(88,166,255,.26)}
+    .ghost{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+    main{padding:18px}
+    .sectionTitle{
+      margin:18px 0 10px;
+      font-size:16px;
+      color:#cfe1ff;
+    }
+    .days{display:grid; gap:12px}
+    details{
+      border:1px solid var(--line);
+      background: rgba(17,26,46,.60);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:14px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      border-bottom:1px solid var(--line);
+      user-select:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .sumL{display:flex; flex-direction:column; gap:2px}
+    .dayline{display:flex; gap:8px; flex-wrap:wrap; align-items:baseline}
+    .d{font-weight:800}
+    .tag{
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .where{color:var(--muted); font-size:13px}
+    .chev{opacity:.8; font-size:14px}
+    .content{padding:14px}
+    .cols{display:grid; gap:12px; grid-template-columns:1fr 1fr 1fr}
+    @media (max-width: 860px){ .cols{grid-template-columns:1fr} }
+    .block{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      min-height: 100%;
+    }
+    .block h4{margin:0 0 8px; font-size:14px; color:#e8eefc}
+    .block ul{margin:0; padding-left:18px; color:var(--muted)}
+    .block li{margin:6px 0}
+    .note{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px dashed rgba(255,204,102,.45);
+      background: rgba(255,204,102,.08);
+      color: #ffe7b2;
+      font-size:13px;
+    }
+    footer{
+      padding:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .links a{display:inline-block; margin-right:12px}
+    @media print{
+      header, footer, .actions{display:none !important;}
+      body{background:#fff; color:#000}
+      details{break-inside:avoid; background:#fff; border:1px solid #ccc}
+      .block{border:1px solid #ddd}
+      a{color:#000; text-decoration:underline}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap topgrid">
+      <div>
+        <h1>Australie en famille — Sydney & Blue Mountains</h1>
+        <p class="sub">Du <b>24 février</b> (arrivée Sydney) au <b>7 mars au matin</b> (départ). Programme “type agence”, adaptable selon météo / énergie des enfants.</p>
+
+        <div class="pillrow">
+          <span class="pill">Koalas & kangourous</span>
+          <span class="pill">Taronga Zoo + “ferme” (Featherdale)</span>
+          <span class="pill">Plages : Manly + Bondi</span>
+          <span class="pill">Blue Mountains : Katoomba</span>
+          <span class="pill">Option parc aquatique : Aquatopia</span>
+        </div>
+
+        <div class="actions">
+          <button onclick="expandAll(true)">Tout ouvrir</button>
+          <button class="ghost" onclick="expandAll(false)">Tout fermer</button>
+          <button class="ghost" onclick="window.print()">Imprimer / PDF</button>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Vos adresses (repères)</h3>
+        <div class="kv">
+          <div>
+            <b>Sydney (CBD) — 24 → 27 fév</b>
+            267 Sussex Street, Sydney NSW 2000<br/>
+            <span class="links">
+              <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=267%20Sussex%20Street%2C%20Sydney%20NSW%202000">Carte</a>
+            </span>
+          </div>
+          <div>
+            <b>Katoomba — 28 fév → 3 mars</b>
+            8 Rodova Street, Katoomba NSW 2780<br/>
+            <span class="links">
+              <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=8%20Rodova%20Street%2C%20Katoomba%20NSW%202780">Carte</a>
+            </span>
+          </div>
+          <div>
+            <b>Sydney (Bondi Junction) — 4 → 7 mars</b>
+            7 Bondi Road, Bondi Junction NSW 2022<br/>
+            <span class="links">
+              <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=7%20Bondi%20Road%2C%20Bondi%20Junction%20NSW%202022">Carte</a>
+            </span>
+          </div>
+        </div>
+        <div class="note">
+          Astuce : gardez 1 “joker” demi-journée (si sieste / météo / fatigue). Les plages et Darling Harbour sont parfaits pour ça.
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="sectionTitle">Itinéraire jour par jour</div>
+
+    <div class="days" id="days">
+
+      <!-- 24 Feb -->
+      <details open>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">24 fév — Arrivée à Sydney</span>
+              <span class="tag">mise en route</span>
+              <span class="tag">balade</span>
+            </div>
+            <div class="where">Nuit à Sydney (267 Sussex St)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin / Après-midi</h4>
+              <ul>
+                <li>Arrivée, installation, récupération (rythme enfants).</li>
+                <li>Petite balade facile : Darling Harbour (aires de jeux, espace piéton).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Soir</h4>
+              <ul>
+                <li>Sunset / promenade autour de Circular Quay (Opéra + Harbour Bridge en vue).</li>
+                <li>Dîner simple côté Darling Harbour / Barangaroo.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Liens utiles</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Circular%20Quay%20Sydney">Circular Quay (carte)</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Darling%20Harbour%20Sydney">Darling Harbour (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 25 Feb -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">25 fév — Koalas & kangourous (Taronga Zoo)</span>
+              <span class="tag">animaux</span>
+              <span class="tag">ferry</span>
+            </div>
+            <div class="where">Nuit à Sydney (CBD)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Départ tôt pour le <b>Taronga Zoo Sydney</b> (prévoir 3–4h sur place).</li>
+                <li>Option “expérience” : y aller en <b>ferry</b> depuis Circular Quay (trajet sympa avec enfants).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Retour vers la ville + pause goûter à Darling Harbour.</li>
+                <li>Si météo moyenne : aquarium/activité indoor à Darling Harbour.</li>
+              </ul>
+              <div class="note">
+                Taronga indique des horaires typiques <b>9h30–17h</b> (selon saison) : vérifiez la veille. :contentReference[oaicite:0]{index=0}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Réservation / infos</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://taronga.org.au/sydney-zoo">Taronga Zoo (officiel)</a> :contentReference[oaicite:1]{index=1}</li>
+                <li><a target="_blank" rel="noopener" href="https://taronga.org.au/buy-tickets">Billets Taronga</a> :contentReference[oaicite:2]{index=2}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Taronga%20Zoo%20Sydney">Taronga (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 26 Feb -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">26 fév — Manly Beach (plage + ferry)</span>
+              <span class="tag">plage</span>
+              <span class="tag">facile</span>
+            </div>
+            <div class="where">Nuit à Sydney (CBD)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Ferry <b>Circular Quay → Manly</b> (activité “transport” qui plaît souvent aux enfants).</li>
+                <li>Plage à <b>Manly Beach</b> + promenade (poussette OK selon zones).</li>
+              </ul>
+              <div class="note">
+                La ligne ferry F1 (Manly) est détaillée par Transport for NSW (horaires/validité). :contentReference[oaicite:3]{index=3}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Glace / goûter sur The Corso.</li>
+                <li>Retour en ferry avant fatigue de fin de journée.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Liens utiles</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://transportnsw.info/routes/details/sydney-ferries-network/f1/090f1">Ferry F1 Manly (Transport NSW)</a> :contentReference[oaicite:4]{index=4}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Manly%20Wharf%20Sydney">Manly Wharf (carte)</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Manly%20Beach">Manly Beach (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 27 Feb -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">27 fév — Flâner en ville (The Rocks + jardins)</span>
+              <span class="tag">ville</span>
+              <span class="tag">souple</span>
+            </div>
+            <div class="where">Dernière nuit à Sydney (CBD)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Quartier <b>The Rocks</b> (ruelles, vue sur l’Opéra/Harbour Bridge).</li>
+                <li>Pause café + aire de jeu si besoin.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Royal Botanic Garden (balade ombragée, parfait avec enfants).</li>
+                <li>Option courte : point de vue Mrs Macquarie’s Chair.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Liens utiles</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The%20Rocks%20Sydney">The Rocks (carte)</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Royal%20Botanic%20Garden%20Sydney">Botanic Garden (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 28 Feb -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">28 fév — Route vers Katoomba (Blue Mountains)</span>
+              <span class="tag">transfert</span>
+              <span class="tag">coucher de soleil</span>
+            </div>
+            <div class="where">Nuit à Katoomba (8 Rodova St)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Départ pour Katoomba (voiture ou train).</li>
+                <li>Si train : la région est accessible avec des intercity réguliers (≈ 2h).</li>
+              </ul>
+              <div class="note">
+                Transport NSW indique des trains au moins toutes les heures, trajet ≈ 2h. :contentReference[oaicite:5]{index=5}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Après-midi / Soir</h4>
+              <ul>
+                <li>Installation + balade “repérage” à Katoomba.</li>
+                <li>Point de vue simple si énergie : Echo Point au coucher du soleil.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Liens utiles</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://transportnsw.info/regional-travel/popular-destinations/visit-blue-mountains-by-train">Aller aux Blue Mountains en train</a> :contentReference[oaicite:6]{index=6}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Echo%20Point%20Katoomba">Echo Point (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 1 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">1 mars — Three Sisters + balades faciles</span>
+              <span class="tag">nature</span>
+              <span class="tag">photos</span>
+            </div>
+            <div class="where">Nuit à Katoomba</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Echo Point + <b>Three Sisters</b> (incontournable).</li>
+                <li>Petite marche selon motivation (éviter les énormes escaliers si fatigue).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Pause au village (chocolat chaud / cafés).</li>
+                <li>Option : points de vue supplémentaires courts (sans grosse rando).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Option “attraction”</h4>
+              <ul>
+                <li><b>Scenic World</b> (téléphérique/railway/skyway) très famille.</li>
+                <li>Les pass incluent l’accès illimité aux attractions (selon formule).</li>
+              </ul>
+              <div class="note">
+                Scenic World propose des pass “unlimited access” (voir billets officiels). :contentReference[oaicite:7]{index=7}
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 2 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">2 mars — “Ferme” d’animaux : Featherdale (koala/kangourou de près)</span>
+              <span class="tag">animaux</span>
+              <span class="tag">interaction</span>
+            </div>
+            <div class="where">Nuit à Katoomba</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Journée</h4>
+              <ul>
+                <li>Sortie au <b>Featherdale Sydney Wildlife Park</b> (très adapté aux enfants).</li>
+                <li>Intérêt : proximité, possibilité de nourrir wallabies/kangourous (selon règles du parc).</li>
+              </ul>
+              <div class="note">
+                Featherdale met en avant le “hand feed wallabies & kangaroos” et l’option “pat a koala”. :contentReference[oaicite:8]{index=8}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Retour Katoomba + temps calme (jeux, lecture, sieste).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Réservation / infos</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://www.featherdale.com.au/visit/">Featherdale (infos visite)</a> :contentReference[oaicite:9]{index=9}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.featherdale.com.au/encounters/koala-encounter-with-a-photo/">Koala encounter (photo)</a> :contentReference[oaicite:10]{index=10}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Featherdale%20Sydney%20Wildlife%20Park">Featherdale (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">3 mars — Dernier jour Blue Mountains (léger + points de vue)</span>
+              <span class="tag">nature</span>
+              <span class="tag">souple</span>
+            </div>
+            <div class="where">Dernière nuit à Katoomba</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Balade courte selon météo (cascades/points de vue).</li>
+                <li>Objectif : rester “facile” avant retour à Sydney.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Souvenirs / cafés, préparation des sacs.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Option pluie</h4>
+              <ul>
+                <li>Scenic World (si non fait) ou activité indoor à Katoomba.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">4 mars — Retour à Sydney (Bondi Junction) + Luna Park</span>
+              <span class="tag">parc d’attractions</span>
+              <span class="tag">harbour</span>
+            </div>
+            <div class="where">Nuit à Sydney (Bondi Junction)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Transfert Katoomba → Sydney, installation (7 Bondi Rd).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li><b>Luna Park Sydney</b> (manèges famille, ambiance fun).</li>
+                <li>Top combiné avec coucher de soleil côté Harbour.</li>
+              </ul>
+              <div class="note">
+                Horaires variables selon jour : consultez la page “events_hours”. :contentReference[oaicite:11]{index=11}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Infos</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://www.lunaparksydney.com/">Luna Park (officiel)</a> :contentReference[oaicite:12]{index=12}</li>
+                <li><a target="_blank" rel="noopener" href="https://tickets.lunaparksydney.com/events_hours">Horaires Luna Park</a> :contentReference[oaicite:13]{index=13}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Luna%20Park%20Sydney">Luna Park (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 5 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">5 mars — Bondi Beach + Coastal Walk (Bondi → Coogee)</span>
+              <span class="tag">plage</span>
+              <span class="tag">balade</span>
+            </div>
+            <div class="where">Nuit à Sydney (Bondi Junction)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Plage à <b>Bondi</b> (tôt = plus calme).</li>
+                <li>Petit-déj/coffee autour de Bondi.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Après-midi</h4>
+              <ul>
+                <li>Faire <b>une portion</b> du <b>Bondi to Coogee Coastal Walk</b> (pas forcément les 6 km avec enfants).</li>
+                <li>Option : Bondi → Bronte → retour (plus simple).</li>
+              </ul>
+              <div class="note">
+                Destination NSW : 6 km, environ 2–3 h, niveau “grade 2”. :contentReference[oaicite:14]{index=14}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Infos</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://www.sydney.com/things-to-do/nature-and-parks/walks/bondi-to-coogee-coastal-walk">Infos walk (sydney.com)</a> :contentReference[oaicite:15]{index=15}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Bondi%20Beach">Bondi (carte)</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Bronte%20Beach">Bronte (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 6 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">6 mars — Journée “eau” (parc aquatique) + dîner simple</span>
+              <span class="tag">parc aquatique</span>
+              <span class="tag">kids</span>
+            </div>
+            <div class="where">Dernière nuit à Sydney (Bondi Junction)</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Option A (parc aquatique)</h4>
+              <ul>
+                <li><b>Aquatopia Water Park</b> (à l’ouest de Sydney).</li>
+                <li>Réserver/contrôler la date : les jours d’ouverture varient, et certains jours peuvent être sold-out.</li>
+              </ul>
+              <div class="note">
+                Le site Aquatopia mentionne guichet à 10h30 les jours d’ouverture + gestion des dates sold-out. :contentReference[oaicite:16]{index=16}
+              </div>
+            </div>
+            <div class="block">
+              <h4>Option B (plus léger)</h4>
+              <ul>
+                <li>Si vous voulez rester proche : demi-journée plage + aire de jeux / shopping à Bondi Junction.</li>
+                <li>Objectif : garder de l’énergie pour le départ le lendemain matin.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Infos</h4>
+              <ul>
+                <li><a target="_blank" rel="noopener" href="https://www.fairfieldcityleisurecentres.com.au/aquatopia-water-park/">Aquatopia (infos officielles)</a> :contentReference[oaicite:17]{index=17}</li>
+                <li><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Aquatopia%20Water%20Park%20Prairiewood">Aquatopia (carte)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 7 Mar -->
+      <details>
+        <summary>
+          <div class="sumL">
+            <div class="dayline">
+              <span class="d">7 mars — Départ (matin)</span>
+              <span class="tag">logistique</span>
+            </div>
+            <div class="where">Départ le matin</div>
+          </div>
+          <div class="chev">▼</div>
+        </summary>
+        <div class="content">
+          <div class="cols">
+            <div class="block">
+              <h4>Matin</h4>
+              <ul>
+                <li>Check-out + transfert aéroport.</li>
+                <li>Petit-déjeuner rapide à proximité (Bondi Junction est pratique).</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>Si vous avez 1–2h de marge</h4>
+              <ul>
+                <li>Passage éclair à un lookout / café sympa, sinon rester simple.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h4>À préparer la veille</h4>
+              <ul>
+                <li>Sacs prêts, snacks enfants, tenue de rechange, chargeurs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="sectionTitle">À réserver / vérifier (checklist)</div>
+    <div class="card">
+      <ul style="margin:0; padding-left:18px; color: var(--muted);">
+        <li><b>Taronga Zoo</b> : billets + horaires du jour. :contentReference[oaicite:18]{index=18}</li>
+        <li><b>Featherdale</b> : si vous faites une rencontre koala/photo, réserver. :contentReference[oaicite:19]{index=19}</li>
+        <li><b>Luna Park</b> : horaires (varient selon jours). :contentReference[oaicite:20]{index=20}</li>
+        <li><b>Aquatopia</b> : jours d’ouverture + billets (sold-out possible). :contentReference[oaicite:21]{index=21}</li>
+        <li><b>Transport Blue Mountains</b> (si train) : planifier via Transport NSW. :contentReference[oaicite:22]{index=22}</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Fait pour un rythme famille (alternance “grosse activité” / “plage & flânerie”). Ajustez selon météo, siestes et énergie.</div>
+      <div style="margin-top:6px;">Astuce : utilisez “Imprimer / PDF” pour exporter ce planning.</div>
+    </div>
+  </footer>
+
+  <script>
+    function expandAll(open){
+      document.querySelectorAll("details").forEach(d => d.open = open);
+    }
+  </script>
+</body>
+</html>
