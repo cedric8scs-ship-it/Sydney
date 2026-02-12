@@ -1,257 +1,457 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Australie en Famille – Sydney & Blue Mountains</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#f4f6fb;
-    color:#1b1f2a;
-}
-
-.hero{
+  body{margin:0;font-family:'Poppins',sans-serif;background:#f4f6fb;color:#1b1f2a}
+  .hero{
     height:90vh;
     background:
       linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.45)),
       url('https://commons.wikimedia.org/wiki/Special:FilePath/Sydney%20opera%20house%20and%20Sydney%20harbour%20bridge.jpg');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-}
+    background-size:cover;background-position:center;
+    display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  }
+  .hero h1{font-size:48px;margin:0;font-weight:800}
+  .hero p{font-size:20px;margin-top:15px}
+  .btn{
+    display:inline-block;margin-top:25px;padding:12px 28px;background:#ff7a18;color:#fff;
+    border-radius:30px;text-decoration:none;font-weight:600
+  }
 
-.hero h1{
-    font-size:48px;
-    margin:0;
-    font-weight:800;
-}
+  section{padding:70px 10%}
+  .section-title{font-size:32px;margin-bottom:18px;text-align:center;font-weight:700}
+  .section-sub{max-width:920px;margin:0 auto 30px;text-align:center;color:#556; font-size:14px}
 
-.hero p{
-    font-size:20px;
-    margin-top:15px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 28px;
-    background:#ff7a18;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-section{
-    padding:70px 10%;
-}
-
-.section-title{
-    font-size:32px;
-    margin-bottom:40px;
-    text-align:center;
-    font-weight:700;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+  .card{
+    background:#fff;border-radius:16px;overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    display:block;
+    transition:.25s;
+  }
+  .card:hover{transform:translateY(-6px)}
+  .card img{
+    width:100%;height:220px;object-fit:cover;display:block;
     transition:transform .4s;
-}
+  }
+  .card a:hover img{transform:scale(1.05)}
+  .card-content{padding:20px}
+  .card-content h3{margin:0;font-size:20px}
+  .card-content p{font-size:14px;color:#555;margin-top:10px}
+  .badge{
+    display:inline-block;background:#e9f2ff;color:#1c4ed8;
+    padding:6px 12px;border-radius:20px;font-size:12px;margin-bottom:10px
+  }
 
-.card a:hover img{
-    transform:scale(1.05);
-}
+  /* Hebergements */
+  .lodging-grid{
+    display:grid;gap:16px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    margin-top:26px;
+  }
+  .lodging{
+    background:#fff;border:1px solid rgba(0,0,0,.06);
+    border-radius:16px;padding:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+  }
+  .lodging h4{margin:0 0 6px;font-size:16px}
+  .lodging .dates{color:#1c4ed8;font-weight:600;font-size:13px;margin-bottom:10px}
+  .lodging .addr{color:#444;font-size:14px;line-height:1.35}
+  .lodging .links{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+  .chip{
+    display:inline-block;padding:8px 12px;border-radius:999px;
+    background:#111827;color:#fff;text-decoration:none;font-size:13px;font-weight:600
+  }
+  .chip.secondary{background:#eef3ff;color:#1c4ed8}
 
-.card-content{
-    padding:20px;
-}
+  /* Map */
+  .map-wrap{
+    margin-top:26px;
+    background:#fff;border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,.06);
+  }
+  #map{height:520px;width:100%}
+  .map-note{
+    padding:14px 16px;
+    background:#fff7ed;
+    border-top:1px solid rgba(0,0,0,.06);
+    color:#7a4b00;
+    font-size:13px;
+  }
 
-.card-content h3{
-    margin:0;
-    font-size:20px;
-}
+  .footer{background:#111827;color:#fff;text-align:center;padding:30px;font-size:14px}
 
-.card-content p{
-    font-size:14px;
-    color:#555;
-    margin-top:10px;
-}
-
-.badge{
-    display:inline-block;
-    background:#e9f2ff;
-    color:#1c4ed8;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:12px;
-    margin-bottom:10px;
-}
-
-.footer{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:30px;
-    font-size:14px;
-}
+  @media (max-width:520px){
+    section{padding:55px 7%}
+    .hero h1{font-size:36px}
+    .hero p{font-size:16px}
+    #map{height:420px}
+  }
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-    <div>
-        <h1>Australie en Famille</h1>
-        <p>24 février → 7 mars (départ le matin)<br>Sydney & Blue Mountains</p>
-        <a href="#programme" class="btn">Voir le Programme</a>
+  <div>
+    <h1>Australie en Famille</h1>
+    <p>24 février → 7 mars (départ le matin)<br>Sydney & Blue Mountains</p>
+    <a href="#programme" class="btn">Voir le Programme</a>
+  </div>
+</div>
+
+<!-- HEBERGEMENTS -->
+<section id="hebergements">
+  <div class="section-title">Hébergements</div>
+  <div class="section-sub">Vos bases par zone, avec accès rapide aux cartes.</div>
+
+  <div class="lodging-grid">
+    <div class="lodging">
+      <h4>Sydney (CBD) — 267 Sussex Street</h4>
+      <div class="dates">Nuits du 24 au 27 février</div>
+      <div class="addr">267 Sussex Street, Sydney, NSW 2000</div>
+      <div class="links">
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=267%20Sussex%20Street%2C%20Sydney%20NSW%202000">Google Maps</a>
+        <a class="chip secondary" href="#programme">Voir activités</a>
+      </div>
     </div>
-</div>
 
+    <div class="lodging">
+      <h4>Katoomba — 8 Rodova Street</h4>
+      <div class="dates">Nuits du 28 février au 3 mars</div>
+      <div class="addr">8 Rodova Street, Katoomba, NSW 2780</div>
+      <div class="links">
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=8%20Rodova%20Street%2C%20Katoomba%20NSW%202780">Google Maps</a>
+        <a class="chip secondary" href="#programme">Voir activités</a>
+      </div>
+    </div>
+
+    <div class="lodging">
+      <h4>Sydney (Bondi Junction) — 7 Bondi Road</h4>
+      <div class="dates">Nuits du 4 au 7 mars</div>
+      <div class="addr">7 Bondi Road, Bondi Junction, NSW 2022</div>
+      <div class="links">
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=7%20Bondi%20Road%2C%20Bondi%20Junction%20NSW%202022">Google Maps</a>
+        <a class="chip secondary" href="#programme">Voir activités</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
 <section id="programme">
-<div class="section-title">Sydney – Animaux & Harbour</div>
+  <div class="section-title">Programme – Points forts</div>
+  <div class="section-sub">Chaque image est cliquable (site officiel ou fiche Google Maps).</div>
 
-<div class="cards">
+  <div class="section-title" style="font-size:26px;margin-top:0;">Sydney – Animaux & Harbour</div>
+  <div class="cards">
 
-<div class="card">
-<a href="https://taronga.org.au/sydney-zoo" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Koala_%40Taronga_Zoo_-_Sydney.jpg" alt="Taronga Zoo">
-</a>
-<div class="card-content">
-<div class="badge">25 février</div>
-<h3>Taronga Zoo</h3>
-<p>Koalas, kangourous et vue exceptionnelle sur Sydney Harbour.</p>
-</div>
-</div>
+    <div class="card">
+      <a href="https://taronga.org.au/sydney-zoo" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Koala_%40Taronga_Zoo_-_Sydney.jpg" alt="Taronga Zoo">
+      </a>
+      <div class="card-content">
+        <div class="badge">25 février</div>
+        <h3>Taronga Zoo</h3>
+        <p>Koalas, kangourous et vues sur Sydney Harbour. Option ferry depuis Circular Quay.</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.google.com/maps/place/Manly+Beach/" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manly_beach.jpg" alt="Manly Beach">
-</a>
-<div class="card-content">
-<div class="badge">26 février</div>
-<h3>Manly Beach</h3>
-<p>Plage accessible en ferry depuis Circular Quay.</p>
-</div>
-</div>
+    <div class="card">
+      <a href="https://www.google.com/maps/place/Manly+Beach/" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manly_beach.jpg" alt="Manly Beach">
+      </a>
+      <div class="card-content">
+        <div class="badge">26 février</div>
+        <h3>Manly Beach</h3>
+        <p>Plage familiale accessible en ferry. Promenade + baignade.</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.google.com/maps/place/The+Rocks+NSW/" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Street_through_The_Rocks.jpg" alt="The Rocks Sydney">
-</a>
-<div class="card-content">
-<div class="badge">27 février</div>
-<h3>The Rocks</h3>
-<p>Quartier historique pour flâner et profiter des vues iconiques.</p>
-</div>
-</div>
+    <div class="card">
+      <a href="https://www.google.com/maps/place/The+Rocks+NSW/" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Street_through_The_Rocks.jpg" alt="The Rocks Sydney">
+      </a>
+      <div class="card-content">
+        <div class="badge">27 février</div>
+        <h3>The Rocks</h3>
+        <p>Quartier historique pour flâner, manger, et faire des photos côté Harbour.</p>
+      </div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <section style="background:#eef3ff">
-<div class="section-title">Blue Mountains – Katoomba</div>
+  <div class="section-title">Blue Mountains – Katoomba</div>
+  <div class="cards">
 
-<div class="cards">
+    <div class="card">
+      <a href="https://www.google.com/maps/place/Three+Sisters/" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Three%20Sisters%2C%20Katoomba%2C%20NSW.jpg" alt="Three Sisters">
+      </a>
+      <div class="card-content">
+        <div class="badge">1 mars</div>
+        <h3>Three Sisters (Echo Point)</h3>
+        <p>Panorama iconique. Balades faciles possibles avec enfants.</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.google.com/maps/place/Three+Sisters/" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Three%20Sisters%2C%20Katoomba%2C%20NSW.jpg" alt="Three Sisters">
-</a>
-<div class="card-content">
-<div class="badge">1 mars</div>
-<h3>Three Sisters</h3>
-<p>Panorama emblématique des Blue Mountains à Echo Point.</p>
-</div>
-</div>
+    <div class="card">
+      <a href="https://www.featherdale.com.au/" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Featherdale_Wildlife_Park_kangaroos.jpg" alt="Featherdale">
+      </a>
+      <div class="card-content">
+        <div class="badge">2 mars</div>
+        <h3>Featherdale Wildlife Park</h3>
+        <p>Très bon complément “ferme” : proximité et interactions (selon règles du parc).</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.featherdale.com.au/" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Featherdale_Wildlife_Park_kangaroos.jpg" alt="Featherdale">
-</a>
-<div class="card-content">
-<div class="badge">2 mars</div>
-<h3>Featherdale Wildlife Park</h3>
-<p>Expérience plus intime pour voir les animaux de près.</p>
-</div>
-</div>
-
-</div>
+  </div>
 </section>
 
 <section>
-<div class="section-title">Bondi – Plage & Fun</div>
+  <div class="section-title">Bondi – Plage & Fun</div>
+  <div class="cards">
 
-<div class="cards">
+    <div class="card">
+      <a href="https://www.google.com/maps/place/Bondi+Beach/" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bondi_Beach%2C_Sydney%2C_Australia.jpg" alt="Bondi Beach">
+      </a>
+      <div class="card-content">
+        <div class="badge">5 mars</div>
+        <h3>Bondi Beach</h3>
+        <p>Plage mythique + cafés. Option portion du Coastal Walk selon l’énergie.</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.google.com/maps/place/Bondi+Beach/" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bondi_Beach%2C_Sydney%2C_Australia.jpg" alt="Bondi Beach">
-</a>
-<div class="card-content">
-<div class="badge">5 mars</div>
-<h3>Bondi Beach</h3>
-<p>Plage mythique de Sydney et promenade côtière.</p>
-</div>
-</div>
+    <div class="card">
+      <a href="https://www.lunaparksydney.com/" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Luna_Park-Sydney-Australia.JPG" alt="Luna Park Sydney">
+      </a>
+      <div class="card-content">
+        <div class="badge">4 mars</div>
+        <h3>Luna Park</h3>
+        <p>Parc d’attractions au bord du Harbour, parfait en fin d’après-midi.</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.lunaparksydney.com/" target="_blank">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Luna_Park-Sydney-Australia.JPG" alt="Luna Park Sydney">
-</a>
-<div class="card-content">
-<div class="badge">4 mars</div>
-<h3>Luna Park</h3>
-<p>Parc d’attractions au bord du Harbour.</p>
-</div>
-</div>
+    <div class="card">
+      <a href="https://www.fairfieldcityleisurecentres.com.au/aquatopia-water-park/" target="_blank" rel="noopener">
+        <img src="https://www.fairfieldcity.nsw.gov.au/files/assets/public/v/1/images/your-council/major-projects/web-wave-pool.jpg?dimension=pageimage&w=1200" alt="Aquatopia">
+      </a>
+      <div class="card-content">
+        <div class="badge">6 mars</div>
+        <h3>Aquatopia Water Park</h3>
+        <p>Journée aquatique avant le départ le 7 au matin. Vérifier ouverture + réserver.</p>
+      </div>
+    </div>
 
-<div class="card">
-<a href="https://www.fairfieldcityleisurecentres.com.au/aquatopia-water-park/" target="_blank">
-<img src="https://www.fairfieldcity.nsw.gov.au/files/assets/public/v/1/images/your-council/major-projects/web-wave-pool.jpg?dimension=pageimage&w=1200" alt="Aquatopia">
-</a>
-<div class="card-content">
-<div class="badge">6 mars</div>
-<h3>Aquatopia Water Park</h3>
-<p>Journée aquatique avant le départ le 7 au matin.</p>
-</div>
-</div>
+  </div>
+</section>
 
-</div>
+<!-- CARTE -->
+<section id="carte" style="background:#0b1220; color:#fff;">
+  <div class="section-title" style="color:#fff;">Carte – Hébergements & lieux visités</div>
+  <div class="section-sub" style="color:#c7d2fe;">
+    Carte satellite Google Maps avec marqueurs cliquables (adresses + liens officiels).
+  </div>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div class="map-note" id="mapNote">
+      Pour afficher la carte interactive avec marqueurs : remplace <b>YOUR_GOOGLE_MAPS_API_KEY</b> par ta clé Google Maps JavaScript API dans le code.
+    </div>
+  </div>
 </section>
 
 <div class="footer">
-Voyage familial – Sydney & NSW | Départ le 7 mars au matin
+  Voyage familial – Sydney & NSW | Départ le 7 mars au matin
 </div>
+
+<script>
+  // Liste des lieux (hébergements + activités)
+  // Chaque marker ouvre une infoWindow avec adresse + lien officiel / Google Maps.
+  const places = [
+    // Hébergements
+    {
+      title: "Hébergement – Sydney (CBD)",
+      type: "hébergement",
+      position: { lat: -33.8731, lng: 151.2058 },
+      address: "267 Sussex Street, Sydney NSW 2000",
+      linkLabel: "Ouvrir sur Google Maps",
+      linkUrl: "https://www.google.com/maps/search/?api=1&query=267%20Sussex%20Street%2C%20Sydney%20NSW%202000"
+    },
+    {
+      title: "Hébergement – Katoomba",
+      type: "hébergement",
+      position: { lat: -33.7167, lng: 150.3070 },
+      address: "8 Rodova Street, Katoomba NSW 2780",
+      linkLabel: "Ouvrir sur Google Maps",
+      linkUrl: "https://www.google.com/maps/search/?api=1&query=8%20Rodova%20Street%2C%20Katoomba%20NSW%202780"
+    },
+    {
+      title: "Hébergement – Bondi Junction",
+      type: "hébergement",
+      position: { lat: -33.8904, lng: 151.2467 },
+      address: "7 Bondi Road, Bondi Junction NSW 2022",
+      linkLabel: "Ouvrir sur Google Maps",
+      linkUrl: "https://www.google.com/maps/search/?api=1&query=7%20Bondi%20Road%2C%20Bondi%20Junction%20NSW%202022"
+    },
+
+    // Activités
+    {
+      title: "Taronga Zoo",
+      type: "activité",
+      position: { lat: -33.8430, lng: 151.2411 },
+      address: "Taronga Zoo, Mosman NSW",
+      linkLabel: "Site officiel",
+      linkUrl: "https://taronga.org.au/sydney-zoo"
+    },
+    {
+      title: "Manly Beach",
+      type: "activité",
+      position: { lat: -33.7963, lng: 151.2887 },
+      address: "Manly Beach, NSW",
+      linkLabel: "Infos Google Maps",
+      linkUrl: "https://www.google.com/maps/place/Manly+Beach/"
+    },
+    {
+      title: "The Rocks",
+      type: "activité",
+      position: { lat: -33.8594, lng: 151.2093 },
+      address: "The Rocks, NSW",
+      linkLabel: "Infos Google Maps",
+      linkUrl: "https://www.google.com/maps/place/The+Rocks+NSW/"
+    },
+    {
+      title: "Three Sisters (Echo Point)",
+      type: "activité",
+      position: { lat: -33.7321, lng: 150.3120 },
+      address: "Three Sisters, Katoomba NSW",
+      linkLabel: "Infos Google Maps",
+      linkUrl: "https://www.google.com/maps/place/Three+Sisters/"
+    },
+    {
+      title: "Featherdale Wildlife Park",
+      type: "activité",
+      position: { lat: -33.7697, lng: 150.6739 },
+      address: "Featherdale, Doonside NSW",
+      linkLabel: "Site officiel",
+      linkUrl: "https://www.featherdale.com.au/"
+    },
+    {
+      title: "Bondi Beach",
+      type: "activité",
+      position: { lat: -33.8915, lng: 151.2767 },
+      address: "Bondi Beach, NSW",
+      linkLabel: "Infos Google Maps",
+      linkUrl: "https://www.google.com/maps/place/Bondi+Beach/"
+    },
+    {
+      title: "Luna Park Sydney",
+      type: "activité",
+      position: { lat: -33.8472, lng: 151.2108 },
+      address: "Luna Park, Milsons Point NSW",
+      linkLabel: "Site officiel",
+      linkUrl: "https://www.lunaparksydney.com/"
+    },
+    {
+      title: "Aquatopia Water Park",
+      type: "activité",
+      position: { lat: -33.7985, lng: 150.9056 },
+      address: "Aquatopia, Prairiewood NSW",
+      linkLabel: "Site officiel",
+      linkUrl: "https://www.fairfieldcityleisurecentres.com.au/aquatopia-water-park/"
+    }
+  ];
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, s => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[s]));
+  }
+
+  // Google Maps callback
+  function initMap(){
+    const mapEl = document.getElementById("map");
+    const noteEl = document.getElementById("mapNote");
+    if(!mapEl) return;
+
+    const center = { lat: -33.8688, lng: 151.2093 }; // Sydney CBD
+    const map = new google.maps.Map(mapEl, {
+      center,
+      zoom: 10,
+      mapTypeId: "satellite",
+      mapTypeControl: true,
+      streetViewControl: false,
+      fullscreenControl: true
+    });
+
+    const info = new google.maps.InfoWindow();
+
+    // Couleurs de marqueurs simples via symbols (pas d’images externes)
+    const pinFor = (type) => ({
+      path: google.maps.SymbolPath.CIRCLE,
+      fillColor: type === "hébergement" ? "#ff7a18" : "#58a6ff",
+      fillOpacity: 0.95,
+      scale: 7,
+      strokeColor: "#ffffff",
+      strokeWeight: 2
+    });
+
+    const bounds = new google.maps.LatLngBounds();
+
+    places.forEach(p => {
+      const marker = new google.maps.Marker({
+        position: p.position,
+        map,
+        title: p.title,
+        icon: pinFor(p.type)
+      });
+
+      bounds.extend(p.position);
+
+      marker.addListener("click", () => {
+        const html = `
+          <div style="font-family:Poppins,Arial,sans-serif;max-width:260px">
+            <div style="font-weight:800;font-size:14px;margin-bottom:6px">${escapeHtml(p.title)}</div>
+            <div style="font-size:12px;color:#333;margin-bottom:10px">${escapeHtml(p.address || "")}</div>
+            <a href="${p.linkUrl}" target="_blank" rel="noopener"
+               style="display:inline-block;background:#111827;color:#fff;text-decoration:none;padding:8px 10px;border-radius:999px;font-size:12px;font-weight:700">
+              ${escapeHtml(p.linkLabel || "Ouvrir")}
+            </a>
+          </div>
+        `;
+        info.setContent(html);
+        info.open(map, marker);
+      });
+    });
+
+    map.fitBounds(bounds);
+
+    if(noteEl) noteEl.style.display = "none";
+  }
+
+  // Si l’API Google Maps ne charge pas (pas de clé), on affiche un message.
+  window.addEventListener("error", (e) => {
+    const noteEl = document.getElementById("mapNote");
+    if(noteEl) noteEl.style.display = "block";
+  });
+</script>
+
+<!-- IMPORTANT : Remplace YOUR_GOOGLE_MAPS_API_KEY par ta clé -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
+</script>
 
 </body>
 </html>
