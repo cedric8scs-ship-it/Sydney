@@ -1,224 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Australie en Famille – Sydney & Blue Mountains</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#f5f7fb;
-    color:#1b1f2a;
+:root{
+--blue:#0f3057;
+--ocean:#008891;
+--sand:#f9ed69;
+--light:#f5f7fa;
+--dark:#111;
 }
 
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:#333;
+line-height:1.6;
+}
+
+/* HERO */
+
 .hero{
-    height:90vh;
-    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url('https://images.unsplash.com/photo-1506973035872-a4ec16b8d5f8?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
+height:90vh;
+background:
+linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.4)),
+url("https://images.unsplash.com/photo-1506973035872-a4f23ef5f7c5?auto=format&fit=crop&w=1950&q=80");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
 }
 
 .hero h1{
-    font-size:48px;
-    margin:0;
-    font-weight:800;
+font-size:48px;
+margin:0;
+font-weight:800;
 }
 
 .hero p{
-    font-size:20px;
-    margin-top:15px;
+font-size:20px;
+margin-top:15px;
+opacity:.9;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 28px;
-    background:#ff7a18;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
+display:inline-block;
+margin-top:25px;
+padding:12px 30px;
+background:var(--sand);
+color:#000;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
 }
+
+.btn:hover{
+background:#ffd93d;
+}
+
+/* SECTIONS */
 
 section{
-    padding:70px 10%;
+padding:70px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-.section-title{
-    font-size:32px;
-    margin-bottom:40px;
-    text-align:center;
-    font-weight:700;
+h2{
+text-align:center;
+margin-bottom:50px;
+font-size:34px;
+color:var(--blue);
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+transition:.4s;
+background:white;
 }
 
 .card:hover{
-    transform:translateY(-6px);
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(0,0,0,.2);
 }
 
 .card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
 .card-content{
-    padding:20px;
+padding:25px;
 }
 
-.card-content h3{
-    margin-top:0;
-    font-size:20px;
+.card h3{
+margin:0 0 10px;
+color:var(--blue);
 }
 
-.card-content p{
-    font-size:14px;
-    color:#555;
+.card p{
+margin:0;
+font-size:15px;
 }
 
-.badge{
-    display:inline-block;
-    background:#e9f2ff;
-    color:#1c4ed8;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:12px;
-    margin-bottom:10px;
+/* FOOTER */
+
+footer{
+background:var(--blue);
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
 }
 
-.footer{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:30px;
-    font-size:14px;
+@media(max-width:768px){
+.hero h1{font-size:32px}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
+
 <div class="hero">
-    <div>
-        <h1>Australie en Famille</h1>
-        <p>24 février → 7 mars | Sydney & Blue Mountains</p>
-        <a href="#programme" class="btn">Voir le Programme</a>
-    </div>
+<div>
+<h1>Australie en Famille</h1>
+<p>Du 24 février au 7 mars – Sydney & Blue Mountains</p>
+<a href="#programme" class="btn">Voir le programme</a>
 </div>
+</div>
+
+<!-- SYDNEY -->
 
 <section id="programme">
-    <div class="section-title">Sydney – Animaux & Harbour</div>
+<h2>Sydney – Ville & Plages</h2>
 
-    <div class="cards">
+<div class="grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">25 février</div>
-                <h3>Taronga Zoo</h3>
-                <p>Koalas, kangourous et vue spectaculaire sur Sydney Harbour. Accès possible en ferry depuis Circular Quay.</p>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506973035872-a4f23ef5f7c5?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Taronga Zoo</h3>
+<p>Rencontrez koalas et kangourous avec vue spectaculaire sur le Harbour Bridge. Accessible en ferry depuis Circular Quay.</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">26 février</div>
-                <h3>Manly Beach</h3>
-                <p>Plage familiale accessible en ferry. Promenade, baignade et ambiance australienne typique.</p>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Manly Beach</h3>
+<p>Plage familiale accessible en ferry. Promenade agréable, ambiance détendue et vue magnifique sur la baie.</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8d5f8?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">27 février</div>
-                <h3>The Rocks & Botanic Garden</h3>
-                <p>Flânerie dans le centre historique, vues iconiques sur l’Opéra et le Harbour Bridge.</p>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Bondi Beach</h3>
+<p>Plage iconique + portion du Bondi to Coogee Coastal Walk. Idéal pour une journée soleil et détente.</p>
+</div>
+</div>
 
-    </div>
+</div>
 </section>
 
-<section style="background:#eef3ff">
-    <div class="section-title">Blue Mountains – Nature & Panorama</div>
+<!-- BLUE MOUNTAINS -->
 
-    <div class="cards">
+<section style="background:var(--light)">
+<h2>Blue Mountains – Nature & Panoramas</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">1 mars</div>
-                <h3>Three Sisters</h3>
-                <p>Panorama emblématique des Blue Mountains à Echo Point. Balades faciles adaptées aux enfants.</p>
-            </div>
-        </div>
+<div class="grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581349487334-d4b4f7b8d1b5?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">2 mars</div>
-                <h3>Featherdale Wildlife Park</h3>
-                <p>Interaction rapprochée avec kangourous et koalas. Expérience plus intime qu’un grand zoo.</p>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598439210625-5067c578f41b?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Three Sisters</h3>
+<p>Point de vue emblématique des Blue Mountains. Balades faciles adaptées aux enfants.</p>
+</div>
+</div>
 
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Scenic World</h3>
+<p>Téléphérique et train panoramique à flanc de falaise. Expérience ludique et spectaculaire.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520962918287-7448c287c3a9?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Featherdale Wildlife Park</h3>
+<p>Expérience immersive avec kangourous et possibilité de photo avec koala.</p>
+</div>
+</div>
+
+</div>
 </section>
+
+<!-- BONUS -->
 
 <section>
-    <div class="section-title">Bondi – Plage & Fun</div>
+<h2>Activités Bonus</h2>
 
-    <div class="cards">
+<div class="grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">5 mars</div>
-                <h3>Bondi Beach & Coastal Walk</h3>
-                <p>Promenade spectaculaire le long des falaises jusqu’à Bronte ou Coogee.</p>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Luna Park</h3>
+<p>Parc d’attractions rétro face au Harbour Bridge. Parfait en fin d’après-midi.</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6df?auto=format&fit=crop&w=1200&q=80">
-            <div class="card-content">
-                <div class="badge">6 mars</div>
-                <h3>Parc Aquatique Aquatopia</h3>
-                <p>Toboggans et piscines pour une journée ludique avant le départ le 7 au matin.</p>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Parc Aquatique</h3>
+<p>Aquatopia Water Park pour une journée ludique avant le départ.</p>
+</div>
+</div>
 
-    </div>
+</div>
 </section>
 
-<div class="footer">
-Voyage familial personnalisé – Sydney & NSW | Départ le 7 mars au matin
-</div>
+<footer>
+<p>Voyage familial personnalisé – Sydney & Blue Mountains</p>
+<p>Départ le 7 mars au matin</p>
+</footer>
 
 </body>
 </html>
